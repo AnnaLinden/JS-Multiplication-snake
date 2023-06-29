@@ -1,6 +1,6 @@
 .grid {
-    width: 200px;
-    height: 200px;
+    width: 400px;
+    height: 300px;
     display: flex;
     flex-wrap: wrap;
     border-style: solid;
@@ -13,8 +13,10 @@
 
 .snake {
     background-color: green;
+    border-radius: 20%;
 }
 
 .food {
     background-color: red;
+    border-radius: 50%;
 }

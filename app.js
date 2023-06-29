@@ -3,13 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const scoreDisplay = document.querySelector('span');
     const startBtn = document.querySelector('.start');
 
-    const width = 10;
+    const width = 20;
     let currentIndex = 0; // first div in our grid
     let foodIndex = 0; // first div in our grid
     let currentSnake = [2,1,0]; // the div in our grid being 2 (or the HEAD), and 0 being the end (TAIL, with all 1's being the body from now on)
     let direction = 1;
     let score = 0;
-    let speed = 0.9;
+    let speed = 5;
     let intervalTime = 0;
     let interval = 0;
 
@@ -62,9 +62,14 @@ document.addEventListener('DOMContentLoaded', function() {
             // display our score
             scoreDisplay.textContent = score;
             // speed up our snake
-            clearInterval(interval);
-            intervalTime = intervalTime * speed;
-            interval = setInterval(moveOutcomes, intervalTime);
+            if(squares[currentSnake[0]].classList.contains('food')) {
+                clearInterval(interval);
+                intervalTime = iMath.max(500, intervalTime/speed);
+                interval = setInterval(moveOutcomes, intervalTime);
+            }
+            //clearInterval(interval);
+            //intervalTime = intervalTime * speed;
+            //interval = setInterval(moveOutcomes, intervalTime);
         }
         squares[currentSnake[0]].classList.add('snake');
     }
@@ -98,9 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.addEventListener('keyup', control);
         startBtn.addEventListener('click', startGame);
 
-        
     
-
-
 
 });
