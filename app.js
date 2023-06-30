@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const scoreDisplay = document.querySelector('span');
     const startBtn = document.querySelector('.start');
 
-    const width = 20;
+    let width = 20;
     let currentIndex = 0; // first div in our grid
     let foodIndex = 0; // first div in our grid
     let currentSnake = [2,1,0]; // the div in our grid being 2 (or the HEAD), and 0 being the end (TAIL, with all 1's being the body from now on)
@@ -101,6 +101,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         document.addEventListener('keyup', control);
+        document.addEventListener("keydown", function(e) {
+            // key codes for arrow keys are 37, 38, 39, 40
+            if([37, 38, 39, 40].includes(e.keyCode)) {
+                e.preventDefault();
+            }
+        });
         startBtn.addEventListener('click', startGame);
 
     

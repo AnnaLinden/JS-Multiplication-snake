@@ -1,18 +1,34 @@
-body {
+.game-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     height: 100vh;
-    margin: 0;
-    background-color: rgb(151, 185, 87)
+    background-color: rgb(151, 185, 87);
+    margin: 20px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.start, .score {
+    margin: 5px;
 }
 
 .grid {
-    width: 400px;
-    height: 300px;
+    width: 600px;
+    height: 450px;
     background: radial-gradient(
     circle,
     rgb(171, 204, 103) 0%,
+    rgb(171, 204, 103) 60%,
     rgb(151, 185, 87) 95%,
     rgb(151, 185, 87) 100%
   );
@@ -22,12 +38,12 @@ body {
     border-color: rgb(42,51,27);
     border-width: thick;
     position: relative;
-    margin: auto;
+    margin: 20;
 }
 
 .grid  div {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
 }
 
 .snake {
@@ -39,3 +55,5 @@ body {
     background-color: red;
     border-radius: 50%;
 }
+
+
