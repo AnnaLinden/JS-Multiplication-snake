@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         randomFood();
         direction = 1;
         scoreDisplay.innerText = score;
-        intervalTime = 300;
+        intervalTime = 200;
         currentSnake = [2,1,0];
         currentIndex = 0;
         currentSnake.forEach(index => squares[index].classList.add('snake'));

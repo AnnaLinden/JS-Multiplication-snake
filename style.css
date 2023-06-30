@@ -4,15 +4,23 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: rgb(151, 185, 87)
 }
 
 .grid {
     width: 400px;
     height: 300px;
+    background: radial-gradient(
+    circle,
+    rgb(171, 204, 103) 0%,
+    rgb(151, 185, 87) 95%,
+    rgb(151, 185, 87) 100%
+  );
     display: flex;
     flex-wrap: wrap;
     border-style: solid;
+    border-color: rgb(42,51,27);
+    border-width: thick;
     position: relative;
     margin: auto;
 }
@@ -23,7 +31,7 @@ body {
 }
 
 .snake {
-    background-color: green;
+    background-color: rgb(42,51,27);
     border-radius: 20%;
 }
 
